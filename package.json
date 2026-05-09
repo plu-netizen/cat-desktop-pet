@@ -1,0 +1,29 @@
+{
+  "name": "cat-desktop-pet",
+  "version": "1.0.0",
+  "description": "桌面小猫 - Desktop Cat Pet",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "author": "plu-netizen",
+  "license": "MIT",
+  "build": {
+    "appId": "com.catdesktoppet.app",
+    "productName": "桌面小猫",
+    "directories": { "output": "dist" },
+    "win": { "target": "nsis" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "桌面小猫"
+    },
+    "files": ["main.js", "preload.js", "index.html"]
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  }
+}
